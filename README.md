@@ -26,7 +26,33 @@ cd claude-custom-skills
 ./install.sh
 ```
 
-### 3. 配置别名（可选）
+### 3. 启用 Skill（⚠️ 重要）
+
+**必须**在 `~/.claude/settings.json` 中启用这些 skill，否则 Claude Code 无法识别：
+
+```bash
+# 编辑配置文件
+nano ~/.claude/settings.json
+```
+
+在 `enabledPlugins` 中添加所有 skill：
+
+```json
+{
+  "enabledPlugins": {
+    "conversation-resumer@local": true,
+    "cross-project-search@local": true,
+    "file-history-browser@local": true,
+    "help-system@local": true,
+    "session-manager@local": true,
+    "todo-manager@local": true
+  }
+}
+```
+
+**注意**：修改配置后需要**重启 Claude Code** 才能生效。
+
+### 4. 配置别名（可选）
 ```bash
 source ~/.claude/custom-skills/.bash_aliases
 ```
@@ -56,6 +82,33 @@ project-search XXX   # 跨项目搜索
 ├── .bash_aliases             # 快捷命令别名
 ├── install.sh                # 一键安装脚本
 └── README.md                 # 使用说明
+```
+
+## 更新日志
+
+### 2025-03-03 - 重要修复
+
+**问题**：新终端窗口中 Claude Code 无法识别已安装的自定义 skill
+
+**原因**：Claude Code 只在 `~/.claude/settings.json` 的 `enabledPlugins` 中加载明确启用的 skill。仅将 skill 文件放在 `custom-skills` 目录中是不够的。
+
+**解决方案**：
+1. 在 `~/.claude/settings.json` 中添加所有 skill 到 `enabledPlugins`
+2. 格式为 `"skill-name@local": true`
+3. 修改后需要**重启 Claude Code**
+
+**参考配置**：
+```json
+{
+  "enabledPlugins": {
+    "conversation-resumer@local": true,
+    "cross-project-search@local": true,
+    "file-history-browser@local": true,
+    "help-system@local": true,
+    "session-manager@local": true,
+    "todo-manager@local": true
+  }
+}
 ```
 
 ## License
