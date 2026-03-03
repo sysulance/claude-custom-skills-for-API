@@ -40,5 +40,5 @@ fh-stats     # file-history stats
 ## 安装
 
 ```bash
-chmod +x ~/.claude/custom-skills/file-history-browser/scripts/file_history.py
+chmod +x ~/.claude/skills/file-history-browser/scripts/file_history.py
 ```

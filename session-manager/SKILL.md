@@ -1,6 +1,6 @@
 ---
 name: session-manager
-description: "Manage Claude Code sessions for Kimi API users. Provides functionality to rename sessions, view session info, and gracefully exit - replacing the native /rename, /exit, and /info slash commands that are unavailable when using third-party APIs like Kimi. Use when user wants to: (1) Rename the current conversation session, (2) View detailed information about the current session, (3) List recent sessions, (4) Gracefully exit with optional state saving."
+description: "Manage Claude Code sessions for Kimi API users. Provides functionality to rename sessions, view session info, and gracefully exit - replacing the native /rename, /exit, and /info slash commands that are unavailable when using third-party APIs like Kimi. Use when user wants to: (1) Rename the current conversation session, (2) View detailed information about the current session, (3) List recent sessions, (4) Gracefully exit with optional state saving, (5) 重命名会话, (6) 查看会话信息, (7) 退出会话."
 ---
 
 # Session Manager
@@ -18,7 +18,7 @@ When using Claude Code with third-party APIs (e.g., Kimi), the native slash comm
 Rename the current conversation session (replaces native `/rename`):
 
 ```bash
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py rename "New Session Name"
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py rename "New Session Name"
 ```
 
 ### View Session Information
@@ -26,7 +26,7 @@ python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py renam
 Display detailed information about the current session (replaces native `/info`):
 
 ```bash
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py info
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py info
 ```
 
 **Shows:**
@@ -41,8 +41,8 @@ python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py info
 List recent conversation sessions:
 
 ```bash
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py list
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py list --limit 20
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py list
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py list --limit 20
 ```
 
 ### Graceful Exit
@@ -50,8 +50,8 @@ python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py list 
 Exit with optional state saving (replaces native `/exit`):
 
 ```bash
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py exit
-python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py exit --save-note "Checkpoint before major changes"
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py exit
+python3 ~/.claude/skills/session-manager/scripts/session_manager.py exit --save-note "Checkpoint before major changes"
 ```
 
 ## File Locations
@@ -59,7 +59,7 @@ python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py exit 
 | Type | Path |
 |------|------|
 | Conversation files | `~/.claude/projects/<project_name>/<session_id>.jsonl` |
-| Script | `~/.claude/custom-skills/session-manager/scripts/session_manager.py` |
+| Script | `~/.claude/skills/session-manager/scripts/session_manager.py` |
 
 ## Workflow: Rename Session
 

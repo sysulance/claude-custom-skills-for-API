@@ -43,5 +43,5 @@ psm         # project-search --messages
 ## 安装
 
 ```bash
-chmod +x ~/.claude/custom-skills/cross-project-search/scripts/cross_project_search.py
+chmod +x ~/.claude/skills/cross-project-search/scripts/cross_project_search.py
 ```

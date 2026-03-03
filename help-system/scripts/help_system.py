@@ -17,7 +17,7 @@ CUSTOM_SKILLS_DIR = CLAUDE_DIR / "custom-skills"
 SKILL_COMMANDS = {
     'conversation-resumer': {
         'command': 'resumer',
-        'usage': 'python3 ~/.claude/custom-skills/conversation-resumer/scripts/scan_history.py',
+        'usage': 'python3 ~/.claude/skills/conversation-resumer/scripts/scan_history.py',
         'description': 'View and resume previous conversations',
         'examples': [
             'resumer                    # List conversations by time',
@@ -27,7 +27,7 @@ SKILL_COMMANDS = {
     },
     'session-manager': {
         'command': 'session',
-        'usage': 'python3 ~/.claude/custom-skills/session-manager/scripts/session_manager.py',
+        'usage': 'python3 ~/.claude/skills/session-manager/scripts/session_manager.py',
         'description': 'Manage sessions: rename, info, exit',
         'examples': [
             'session rename "New Name"  # Rename current session',
@@ -38,7 +38,7 @@ SKILL_COMMANDS = {
     },
     'todo-manager': {
         'command': 'todo',
-        'usage': 'python3 ~/.claude/custom-skills/todo-manager/scripts/todo_manager.py',
+        'usage': 'python3 ~/.claude/skills/todo-manager/scripts/todo_manager.py',
         'description': 'Task management with priorities',
         'examples': [
             'todo                       # Show pending todos',
@@ -50,7 +50,7 @@ SKILL_COMMANDS = {
     },
     'help-system': {
         'command': 'help',
-        'usage': 'python3 ~/.claude/custom-skills/help-system/scripts/help_system.py',
+        'usage': 'python3 ~/.claude/skills/help-system/scripts/help_system.py',
         'description': 'Show help for custom skills',
         'examples': [
             'help                       # Show this help',
@@ -133,7 +133,7 @@ These custom skills replace native Claude Code slash commands
 that are unavailable when using third-party APIs like Kimi.
 
 SKILL LOCATIONS:
-  Source:   ~/.claude/custom-skills/<skill-name>/
+  Source:   ~/.claude/skills/<skill-name>/
   Installed: ~/.claude/plugins/<skill-name>.skill
 
 CLI PARAMETERS (Always Available):

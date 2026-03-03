@@ -1,6 +1,6 @@
 ---
 name: conversation-resumer
-description: "Resume and restore previous Claude Code conversations from local history. Use when user wants to: (1) Continue a previous conversation or project, (2) View conversation history with visual formatting, (3) Restore context from past work, (4) List all past conversations grouped by time or project, (5) Export conversations to markdown. This skill scans ~/.claude/projects/ to find and display conversation history with timestamps, working directories, and message previews."
+description: "Resume and restore previous Claude Code conversations from local history. Use when user wants to: (1) Continue a previous conversation or project, (2) View conversation history with visual formatting, (3) Restore context from past work, (4) List all past conversations grouped by time or project, (5) Export conversations to markdown, (6) 查看历史对话, (7) 恢复之前的对话, (8) 显示对话记录. This skill scans ~/.claude/projects/ to find and display conversation history with timestamps, working directories, and message previews."
 ---
 
 # Conversation Resumer
@@ -23,7 +23,7 @@ Claude Code stores conversation history in `~/.claude/projects/`. This skill hel
 Shows conversations grouped by time periods (Today, Yesterday, This Week, etc.):
 
 ```bash
-python3 ~/.claude/plugins/conversation-resumer/scripts/scan_history.py
+python3 ~/.claude/skills/conversation-resumer/scripts/scan_history.py
 ```
 
 ### Project-Grouped View
@@ -96,7 +96,7 @@ When user says "continue my previous work" or similar:
 Run the scan script with visual output:
 
 ```bash
-python3 ~/.claude/plugins/conversation-resumer/scripts/scan_history.py
+python3 ~/.claude/skills/conversation-resumer/scripts/scan_history.py
 ```
 
 ### Step 2: Present Options
@@ -130,7 +130,7 @@ Provide a brief summary:
 |------|------|
 | Projects directory | `~/.claude/projects/` |
 | Conversation files | `~/.claude/projects/<project_name>/<session_id>.jsonl` |
-| Skill script | `~/.claude/plugins/conversation-resumer/scripts/scan_history.py` |
+| Skill script | `~/.claude/skills/conversation-resumer/scripts/scan_history.py` |
 
 ## Notes
 
